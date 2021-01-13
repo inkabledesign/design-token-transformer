@@ -59,5 +59,4 @@ jobs:
           destination_folder: './src/global'
           user_email: 'dariusz.nowacki@sky.uk'
           user_name: 'dariuszn79'
-          commit_message: 'A custom message for the commit'
        

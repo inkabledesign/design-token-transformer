@@ -54,7 +54,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'css/_variables.css'
+          source_file: 'build/css/_variables.css'
           destination_repo: 'dariuszn79/dt-react'
           destination_folder: 'src/global'
           user_email: 'dariusz.nowacki@sky.uk'

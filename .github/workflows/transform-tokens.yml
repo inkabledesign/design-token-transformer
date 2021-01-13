@@ -42,20 +42,21 @@ jobs:
       # We now store the changes in the repository
       - name: Persist changes in repository
         uses: mikeal/publish-to-github-action@master
-      - name: Checkout
-        uses: actions/checkout@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            # this parameter is optional and defaults to master but I am using main
+          # this parameter is optional and defaults to master but I am using main
           BRANCH_NAME: 'main'
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Pushes test file
         uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'test2.md'
+          source_file: '.css/_variables.css'
           destination_repo: 'dariuszn79/dt-react'
-          destination_folder: 'src/global'
+          destination_folder: './src/global'
           user_email: 'dariusz.nowacki@sky.uk'
           user_name: 'dariuszn79'
           commit_message: 'A custom message for the commit'
